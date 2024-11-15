@@ -3,7 +3,10 @@
         "cookiesElement":"#declineButton",
         "addressInputElement":"[aria-label='Adresse']",
         "url": "https://www.telenor.dk/shop/internet/",
-        "dropdownFirstOption": "#addressList > li:nth-child(1)"
+        "dropdownFirstOption": "#addressList > li:nth-child(1)",
+        "pageLoadedBody": "#main > div.container--wide.broadband-search-results > div > div > div.container.margin-trailer--xxsmall > div:nth-child(3)",
+        "noConnectionFoundSelector": "alwaysConnectionAvailableOnTheWebsite__",
+        "noConnectionFound": "alwaysConnectionAvailableOnTheWebsite__"
     },
 
     "internet0": {

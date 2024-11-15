@@ -1,10 +1,12 @@
 {
     "general": {
-        "cookiesElement":"#declineButton",
+        "cookiesElement":"#declineButton", 
         "addressInputElement":"#c-dropdown",
-        "url": "https://www.telia.dk/abonnementer/bredbaand/",
-        "dropdownFirstOption": "#vs1__option-1",
-        "noConnectionFound": "#app > main > div.broadband-offerings-page > div.broadband-offerings-page__mobile-offerings-only-content > div > section:nth-child(1) > div > div.c-section__description > h3"
+        "url": "https://www.telia.dk/abonnementer/internet/5g-internet/",
+        "dropdownFirstOption": "#vs1__option-0",
+        "pageLoadedBody": "#app > main > div.broadband-offerings-page",
+        "noConnectionFoundSelector": "#app > main > div.broadband-offerings-page > div.broadband-offerings-page__mobile-offerings-only-content > div > section:nth-child(1) > div > div.c-section__description > h3",
+        "noConnectionFound": "Vi tilbyder desværre ikke internet på adressen"
     },
 
     "internet0": {

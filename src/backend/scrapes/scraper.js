@@ -28,7 +28,7 @@ async function internetScrapingContents(addressParsed) {
             await page.waitForSelector(addressParsingInput, { visible: true });
             
             await page.type(addressParsingInput, addressParsed, { visible: true, delay: 10 }); 
-            await wait(3);
+            await wait(2);
 
             await page.click(confirmAddress)
         } catch (e) {
@@ -37,7 +37,7 @@ async function internetScrapingContents(addressParsed) {
         }
         
         try {
-            const results = await extractInformation(page, data.internet0.name, { visible: true, timeout: 3000 });
+            const results = await extractInformation(page, data, { visible: true, timeout: 3000 });
             allSubscriptions.push(results);
         } catch (error) {
             console.error("Der er sket en fejl:", error.message);
@@ -45,6 +45,83 @@ async function internetScrapingContents(addressParsed) {
     }
     await browser.close();
     return allSubscriptions;
+}
+
+
+
+async function extractInformation(page, xPathsData) {
+    const internetKeys = Object.keys(xPathsData).filter(key => key.startsWith('internet'));
+    const isPageLoadedDependancy = xPathsData.general.pageLoadedBody;
+    let subscriptions = [];
+
+    await page.waitForSelector(isPageLoadedDependancy, { visible: true });
+    
+    await checkForProviderAvailability(page, xPathsData);
+
+    for (let i = 0; i < internetKeys.length; i++) {
+        try {
+            const internetKey = internetKeys[i];
+            const dependancy = xPathsData[internetKey].xpaths.dependancy;
+            
+            
+            const selectorForPrice = xPathsData[internetKey].xpaths.price;
+            const selectorForType = xPathsData[internetKey].xpaths.type;
+            const selectorForSpeed = xPathsData[internetKey].xpaths.speed;
+            const selectorForLeastPrice = xPathsData[internetKey].xpaths.leastPrice;
+            const selectorForDiscountPrice = xPathsData[internetKey].xpaths.discountedPrice;
+
+
+            const scrapedData = await page.evaluate(
+                (dependancy, selectorForPrice, selectorForType, selectorForSpeed, selectorForLeastPrice, selectorForDiscountPrice) => {
+                    const parentElement = document.querySelector(dependancy);
+                    if (!parentElement) {return null;}
+
+                    const price = parentElement.querySelector(selectorForPrice)?.textContent.trim() || null;
+                    const type = parentElement.querySelector(selectorForType)?.textContent.trim() || null;
+                    const speed = parentElement.querySelector(selectorForSpeed)?.textContent.trim() || null;
+                    const leastPrice = parentElement.querySelector(selectorForLeastPrice)?.textContent.trim() || null;
+                    const discountedPrice = parentElement.querySelector(selectorForDiscountPrice)?.textContent.trim() || null;
+                    
+                    return { price, type, speed, leastPrice, discountedPrice };
+                },
+                dependancy, selectorForPrice, selectorForType, selectorForSpeed, selectorForLeastPrice, selectorForDiscountPrice
+            );
+            
+            if (scrapedData !== null) {
+                subscriptions.push(scrapedData);
+            }
+        } catch (e) {
+            console.error(`Error extracting data for ${internetKeys[i]}:`, e.message);
+        }
+    }
+    console.log("START", subscriptions, "SLUT");
+    return subscriptions;
+}
+
+async function checkForProviderAvailability(page, xPathsData){
+    let noAvailableConnection = xPathsData.general.noConnectionFoundSelector;
+    console.log("noAvailableConnection: >", noAvailableConnection, "<");
+
+    if(noAvailableConnection != "alwaysConnectionAvailableOnTheWebsite__"){
+        try {
+            await page.waitForSelector(noAvailableConnection, { visible: true, timeout: 2000 });
+
+            const errorMessages = await page.$$eval(noAvailableConnection, (elements) => {
+                return elements.map(el => el.textContent.trim());
+            });
+
+            const expectedText = xPathsData.general.noConnectionFound;
+            const foundMessage = errorMessages.find(text => text.includes(expectedText));
+
+            if (foundMessage) {
+                console.log("Match between foundMessage:", foundMessage);
+                return [];
+            }
+        } catch (error) {
+            console.error("Error while checking connection availability:", error.message);
+        }
+    }
+    return [true];
 }
 
 async function wait(s) {
@@ -77,69 +154,13 @@ async function unpackingXPaths(company) {
     }
 }
 
-async function extractInformation(page, company) {
-    const xPathsData = await unpackingXPaths(company);
-    const internetKeys = Object.keys(xPathsData).filter(key => key.startsWith('internet'));
-    let subscriptions = [];
+internetScrapingContents("Park Alle 44, 9220");
 
-    const isPageLoadedDependancy = xPathsData[internetKeys[0]]?.xpaths.dependancy;
-
-    try {
-        await page.waitForSelector(isPageLoadedDependancy, { visible: true });
-    } catch (error) {
-        console.error(`Main dependency element not found within the timeout: ${error.message}`);
-        return;
-    }
-
-    const isConnectionFound = await page.$(xPathsData.general.noConnectionFound);
-
-    if (isConnectionFound) {
-        console.log("No internet connection available at this address.");
-    } else {
-        console.log("Internet connection is available.");
-    }
+// "Alexander Foss Gade 14D, 1 3, 9000"     Forbindelse der både kan få fiber og 5G
+// "Park Alle 44, 9220"                     Forbindelse der ikke kan få internet fra Telia
 
 
-    for (let i = 0; i < internetKeys.length; i++) {
-        try {
-            const internetKey = internetKeys[i];
-            const dependancy = xPathsData[internetKey].xpaths.dependancy;
-            
-            const selectorForPrice = xPathsData[internetKey].xpaths.price;
-            const selectorForType = xPathsData[internetKey].xpaths.type;
-            const selectorForSpeed = xPathsData[internetKey].xpaths.speed;
-            const selectorForLeastPrice = xPathsData[internetKey].xpaths.leastPrice;
-            const selectorForDiscountPrice = xPathsData[internetKey].xpaths.discountedPrice;
-        
-            const scrapedData = await page.evaluate(
-                (dependancy, selectorForPrice, selectorForType, selectorForSpeed, selectorForLeastPrice, selectorForDiscountPrice) => {
-                    const parentElement = document.querySelector(dependancy);
-                    
-                    if (!parentElement) {return null;}
-                    
-                    const price = parentElement.querySelector(selectorForPrice)?.textContent.trim() || null;
-                    const type = parentElement.querySelector(selectorForType)?.textContent.trim() || null;
-                    const speed = parentElement.querySelector(selectorForSpeed)?.textContent.trim() || null;
-                    const leastPrice = parentElement.querySelector(selectorForLeastPrice)?.textContent.trim() || null;
-                    const discountedPrice = parentElement.querySelector(selectorForDiscountPrice)?.textContent.trim() || null;
-                    
-                    return { price, type, speed, leastPrice, discountedPrice };
-                },
-                dependancy, selectorForPrice, selectorForType, selectorForSpeed, selectorForLeastPrice, selectorForDiscountPrice
-            );
-            if(scrapedData !== null){
-                subscriptions.push(scrapedData);
-            }
-            
-        } catch (e) {
-            console.error(`Error extracting data for ${internetKeys[i]}:`, e.message);
-        }
-    }
-    console.log("START", subscriptions, "SLUT");
-    return subscriptions;
-}
-
-internetScrapingContents("Park alle 44, 9220");
-
-//                                                 "Alexander Foss Gade 14D, 1 3, 9000"
-// Forbindelse der ikke kan få internet fra Telia: "Park alle 44, 9220"
+// TODO
+    // Hver anden side skal åbnes i en ny page
+    // Fikse catch or error statements
+    //
