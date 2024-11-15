@@ -1,0 +1,56 @@
+{
+    "general": {
+        "cookiesElement":"#declineButton",
+        "addressInputElement":"[aria-label='Adresse']",
+        "url": "https://www.telenor.dk/shop/internet/",
+        "dropdownFirstOption": "#addressList > li:nth-child(1)"
+    },
+
+    "internet0": {
+        "name": "telenor",
+        "xpaths": {
+            "dependancy": "#main > div.container--wide.broadband-search-results > div > div > div.container.margin-trailer--xxsmall > div:nth-child(3) > div.hero-card.full-width.grid-row--gutter-none.grid-row--center.padding-toleft.padding-toright.desktop-padding-toleft--none.desktop-padding-toright--none.margin-trailer.desktop-margin-trailer--small.hero-card--campaign > div.col-12.col-md-10 > form > div",
+                  "type": "#main > div.container--wide.broadband-search-results > div > div > div.container.margin-trailer--xxsmall > div:nth-child(3) > div.hero-card.full-width.grid-row--gutter-none.grid-row--center.padding-toleft.padding-toright.desktop-padding-toleft--none.desktop-padding-toright--none.margin-trailer.desktop-margin-trailer--small.hero-card--campaign > div.col-12.col-md-10 > form > div > div.col-12.col-md-auto.desktop-padding-whole--large > div > div.hero-card__img.hero-card__img--full-height.rel.ovh > div > div.hero-card__campaign-price.text-extra-bold.text-italic.padding-toright--xxsmall.padding-toleft--xxxsmall > span",
+                 "speed": "#main > div.container--wide.broadband-search-results > div > div > div.container.margin-trailer--xxsmall > div:nth-child(3) > div.hero-card.full-width.grid-row--gutter-none.grid-row--center.padding-toleft.padding-toright.desktop-padding-toleft--none.desktop-padding-toright--none.margin-trailer.desktop-margin-trailer--small.hero-card--campaign > div.col-12.col-md-10 > form > div > div.col-12.col-md-auto.desktop-padding-whole--large > div > div.hero-card__img.hero-card__img--full-height.rel.ovh > div > div.hero-card__campaign-price.text-extra-bold.text-italic.padding-toright--xxsmall.padding-toleft--xxxsmall > span",
+                 "price": "#main > div.container--wide.broadband-search-results > div > div > div.container.margin-trailer--xxsmall > div:nth-child(3) > div.hero-card.full-width.grid-row--gutter-none.grid-row--center.padding-toleft.padding-toright.desktop-padding-toleft--none.desktop-padding-toright--none.margin-trailer.desktop-margin-trailer--small.hero-card--campaign > div.col-12.col-md-10 > form > div > div.col-12.col-md-auto.desktop-padding-whole--large > div > div.hero-card__img.hero-card__img--full-height.rel.ovh > div > div.hero-card__campaign-price.text-extra-bold.text-italic.padding-toright--xxsmall.padding-toleft--xxxsmall > span",
+       "discountedPrice": "#main > div.container--wide.broadband-search-results > div > div > div.container.margin-trailer--xxsmall > div:nth-child(3) > div.hero-card.full-width.grid-row--gutter-none.grid-row--center.padding-toleft.padding-toright.desktop-padding-toleft--none.desktop-padding-toright--none.margin-trailer.desktop-margin-trailer--small.hero-card--campaign > div.col-12.col-md-10 > form > div > div.col-12.col-md-auto.desktop-padding-whole--large > div > div.hero-card__img.hero-card__img--full-height.rel.ovh > div > div.hero-card__campaign-price.text-extra-bold.text-italic.padding-toright--xxsmall.padding-toleft--xxxsmall > span",
+            "leastPrice": "#main > div.container--wide.broadband-search-results > div > div > div.container.margin-trailer--xxsmall > div:nth-child(3) > div.hero-card.full-width.grid-row--gutter-none.grid-row--center.padding-toleft.padding-toright.desktop-padding-toleft--none.desktop-padding-toright--none.margin-trailer.desktop-margin-trailer--small.hero-card--campaign > div.col-12.col-md-10 > form > div > div.col-12.col-md-auto.desktop-padding-whole--large > div > div.hero-card__img.hero-card__img--full-height.rel.ovh > div > div.hero-card__campaign-price.text-extra-bold.text-italic.padding-toright--xxsmall.padding-toleft--xxxsmall > span"
+        }
+    },
+
+    "internet1": {
+        "name": "telenor",
+        "xpaths": {
+            "dependancy": "#main > div.container--wide.broadband-search-results > div > div > div.internet-cards-list.full-width.padding-leader--large.background-pale-stone > div > div.rel.grid-row--gutter-none.grid-row--center > div > div > div > div > div.col-stretch.internet-card__wrapper.margin-trailer--xlarge.desktop-margin-trailer--large.background-white.grid-row--gutter-none.dir--column",
+                  "type": "#main > div.container--wide.broadband-search-results > div > div > div.internet-cards-list.full-width.padding-leader--large.background-pale-stone > div > div.rel.grid-row--gutter-none.grid-row--center > div > div > div > div > div.col-stretch.internet-card__wrapper.margin-trailer--xlarge.desktop-margin-trailer--large.background-white.grid-row--gutter-none.dir--column > div.internet-card__header.col-auto.full-width.grid-row--gutter-none.grid-row--line.grid-row--middle.text-bold.padding-whole--small.desktop-padding-toleft.desktop-padding-toright > div.col-stretch.padding-toright--small.desktop-padding-toright.text-size--16.desktop-text-size--18",
+                 "speed": "#main > div.container--wide.broadband-search-results > div > div > div.internet-cards-list.full-width.padding-leader--large.background-pale-stone > div > div.rel.grid-row--gutter-none.grid-row--center > div > div > div > div > div.col-stretch.internet-card__wrapper.margin-trailer--xlarge.desktop-margin-trailer--large.background-white.grid-row--gutter-none.dir--column > div.internet-card__header.col-auto.full-width.grid-row--gutter-none.grid-row--line.grid-row--middle.text-bold.padding-whole--small.desktop-padding-toleft.desktop-padding-toright > div.col-stretch.padding-toright--small.desktop-padding-toright.text-size--16.desktop-text-size--18",
+                 "price": "#main > div.container--wide.broadband-search-results > div > div > div.internet-cards-list.full-width.padding-leader--large.background-pale-stone > div > div.rel.grid-row--gutter-none.grid-row--center > div > div > div > div > div.col-stretch.internet-card__wrapper.margin-trailer--xlarge.desktop-margin-trailer--large.background-white.grid-row--gutter-none.dir--column > div.internet-card__header.col-auto.full-width.grid-row--gutter-none.grid-row--line.grid-row--middle.text-bold.padding-whole--small.desktop-padding-toleft.desktop-padding-toright > div.col-stretch.padding-toright--small.desktop-padding-toright.text-size--16.desktop-text-size--18",
+       "discountedPrice": "#main > div.container--wide.broadband-search-results > div > div > div.internet-cards-list.full-width.padding-leader--large.background-pale-stone > div > div.rel.grid-row--gutter-none.grid-row--center > div > div > div > div > div.col-stretch.internet-card__wrapper.margin-trailer--xlarge.desktop-margin-trailer--large.background-white.grid-row--gutter-none.dir--column > div.internet-card__header.col-auto.full-width.grid-row--gutter-none.grid-row--line.grid-row--middle.text-bold.padding-whole--small.desktop-padding-toleft.desktop-padding-toright > div.col-stretch.padding-toright--small.desktop-padding-toright.text-size--16.desktop-text-size--18",
+            "leastPrice": "#main > div.container--wide.broadband-search-results > div > div > div.internet-cards-list.full-width.padding-leader--large.background-pale-stone > div > div.rel.grid-row--gutter-none.grid-row--center > div > div > div > div > div.col-stretch.internet-card__wrapper.margin-trailer--xlarge.desktop-margin-trailer--large.background-white.grid-row--gutter-none.dir--column > div.internet-card__header.col-auto.full-width.grid-row--gutter-none.grid-row--line.grid-row--middle.text-bold.padding-whole--small.desktop-padding-toleft.desktop-padding-toright > div.col-stretch.padding-toright--small.desktop-padding-toright.text-size--16.desktop-text-size--18"
+        }
+    },
+
+    "internet2": {
+        "name": "telia",
+        "xpaths": {
+            "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(3) > div ",
+                  "type": ".subscription-card__title",
+                 "speed": ".subscription-card__title",
+                 "price": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__title",
+            "leastPrice": ".subscription-card__title"
+        }
+    },
+
+    "internet3": {
+        "name": "telia",
+        "xpaths": {
+            "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(4) > div ",
+                  "type": ".subscription-card__title",
+                 "speed": ".subscription-card__title",
+                 "price": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__title",
+            "leastPrice": ".subscription-card__title"
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "general": {
+        "cookiesElement":"#declineButton",
+        "addressInputElement":"#c-dropdown",
+        "url": "https://www.telia.dk/abonnementer/bredbaand/",
+        "dropdownFirstOption": "#vs1__option-1",
+        "noConnectionFound": "#app > main > div.broadband-offerings-page > div.broadband-offerings-page__mobile-offerings-only-content > div > section:nth-child(1) > div > div.c-section__description > h3"
+    },
+
+    "internet0": {
+        "name": "telia",
+        "xpaths": {
+            "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(1) > div ",
+                  "type": ".subscription-card__title",
+                 "speed": ".subscription-card__title",
+                 "price": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__title",
+            "leastPrice": ".subscription-card__title"
+        }
+    },
+
+    "internet1": {
+        "name": "telia",
+        "xpaths": {
+            "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(2) > div ",
+                  "type": ".subscription-card__title",
+                 "speed": ".subscription-card__title",
+                 "price": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__title",
+            "leastPrice": ".subscription-card__title"
+        }
+    },
+
+    "internet2": {
+        "name": "telia",
+        "xpaths": {
+            "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(3) > div ",
+                  "type": ".subscription-card__title",
+                 "speed": ".subscription-card__title",
+                 "price": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__title",
+            "leastPrice": ".subscription-card__title"
+        }
+    },
+
+    "internet3": {
+        "name": "telia",
+        "xpaths": {
+            "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(4) > div ",
+                  "type": ".subscription-card__title",
+                 "speed": ".subscription-card__title",
+                 "price": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__title",
+            "leastPrice": ".subscription-card__title"
+        }
+    }
+}

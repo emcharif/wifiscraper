@@ -1,0 +1,89 @@
+#addressFieldContainer {
+    position: relative;
+    width: 300px; /* Adjust width to your preference */
+}
+
+/* Styling for the address input field */
+#addressField {
+    width: 100%;
+    padding: 10px;
+    padding-right: 50px; /* Extra space for the button */
+    box-sizing: border-box;
+    border: 1px solid var(--border-color); /* Using variable for border color */
+    border-radius: 4px;
+}
+
+/* Styling for the search button */
+#searchInternet {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 10px 15px;
+    background-color: var(--primary-color); /* Pink background using variable */
+    color: var(--background-color); /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+#searchInternet:hover {
+    background-color: var(--primary-color-light); /* Lighter pink on hover using variable */
+}
+
+.broadbandCards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+
+}
+
+.section1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section1 img {
+    width: 100px;
+}
+
+.section2 {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section2 li {
+    margin-bottom: 10px;
+}
+
+.section3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.section3 button {
+    background-color: #00d1b2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.section3 img {
+    width: 50px;
+    margin-top: 10px;
+}
