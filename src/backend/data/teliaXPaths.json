@@ -6,7 +6,8 @@
         "dropdownFirstOption": "#vs1__option-0",
         "pageLoadedBody": "#app > main > div.broadband-offerings-page",
         "noConnectionFoundSelector": "#app > main > div.broadband-offerings-page > div.broadband-offerings-page__mobile-offerings-only-content > div > section:nth-child(1) > div > div.c-section__description > h3",
-        "noConnectionFound": "Vi tilbyder desværre ikke internet på adressen"
+        "noConnectionFound": "Vi tilbyder desværre ikke internet på adressen",
+        "companyName": "Telia"
     },
 
     "internet0": {
@@ -14,9 +15,9 @@
         "xpaths": {
             "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(1) > div ",
                   "type": ".subscription-card__title",
-                 "speed": ".subscription-card__title",
+                 "speed": ".subscription-card__attr",
                  "price": ".subscription-card__title",
-       "discountedPrice": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__prices",
             "leastPrice": ".subscription-card__title"
         }
     },
@@ -26,9 +27,9 @@
         "xpaths": {
             "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(2) > div ",
                   "type": ".subscription-card__title",
-                 "speed": ".subscription-card__title",
+                 "speed": ".subscription-card__attr",
                  "price": ".subscription-card__title",
-       "discountedPrice": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__prices",
             "leastPrice": ".subscription-card__title"
         }
     },
@@ -38,9 +39,9 @@
         "xpaths": {
             "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(3) > div ",
                   "type": ".subscription-card__title",
-                 "speed": ".subscription-card__title",
+                 "speed": ".subscription-card__attr",
                  "price": ".subscription-card__title",
-       "discountedPrice": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__prices",
             "leastPrice": ".subscription-card__title"
         }
     },
@@ -50,9 +51,9 @@
         "xpaths": {
             "dependancy": "#carousel > div.VueCarousel-wrapper > div > div:nth-child(4) > div ",
                   "type": ".subscription-card__title",
-                 "speed": ".subscription-card__title",
+                 "speed": ".subscription-card__attr",
                  "price": ".subscription-card__title",
-       "discountedPrice": ".subscription-card__title",
+       "discountedPrice": ".subscription-card__prices",
             "leastPrice": ".subscription-card__title"
         }
     }

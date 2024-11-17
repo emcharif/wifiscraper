@@ -38,7 +38,7 @@ async function internetScrapingContents(addressParsed) {
         
         try {
             const results = await extractInformation(page, data, { visible: true, timeout: 3000 });
-            allSubscriptions.push(results);
+            allSubscriptions.push(company, results);
         } catch (error) {
             console.error("Der er sket en fejl:", error.message);
         }
@@ -70,7 +70,6 @@ async function extractInformation(page, xPathsData) {
             const selectorForLeastPrice = xPathsData[internetKey].xpaths.leastPrice;
             const selectorForDiscountPrice = xPathsData[internetKey].xpaths.discountedPrice;
 
-
             const scrapedData = await page.evaluate(
                 (dependancy, selectorForPrice, selectorForType, selectorForSpeed, selectorForLeastPrice, selectorForDiscountPrice) => {
                     const parentElement = document.querySelector(dependancy);
@@ -94,7 +93,6 @@ async function extractInformation(page, xPathsData) {
             console.error(`Error extracting data for ${internetKeys[i]}:`, e.message);
         }
     }
-    console.log("START", subscriptions, "SLUT");
     return subscriptions;
 }
 
@@ -145,7 +143,7 @@ async function IDingCookiesAndTextElement(cookiesElement, addressParsingInput, p
 
 async function unpackingXPaths(company) {
     try {
-        const data = await fs.readFile(`../data/${company}XPaths.json`, 'utf8');
+        const data = await fs.readFile(`./data/${company}XPaths.json`, 'utf8');
         const totalXPaths = JSON.parse(data);
         return totalXPaths;
     } catch (err) {
@@ -153,8 +151,6 @@ async function unpackingXPaths(company) {
         return null;
     }
 }
-
-internetScrapingContents("Park Alle 44, 9220");
 
 // "Alexander Foss Gade 14D, 1 3, 9000"     Forbindelse der både kan få fiber og 5G
 // "Park Alle 44, 9220"                     Forbindelse der ikke kan få internet fra Telia

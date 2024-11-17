@@ -2,8 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 function writeError(nameOfFile, extraElement, errorMessage) {
-    
-
     try {
         const logDir = path.join(__dirname,'..', '..', '..', 'errors');
         const logFilePath = path.join(logDir, `${nameOfFile}.log`);

@@ -6,7 +6,7 @@
     justify-content: center; /* Center the navbar */
     align-items: center;
     background-color: var(--background-color); /* White background */
-    width: 40%; /* Set width to 40% */
+    width: 60%; /* Set width to 40% */
     margin: 20px auto; /* Center horizontally */
     padding: 10px;
     border-radius: 8px;

@@ -1,16 +1,32 @@
-#addressFieldContainer {
-    position: relative;
-    width: 300px; /* Adjust width to your preference */
+/* Form styling */
+#addressForm {
+    width: 100%;
+    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: var(--card-bg-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem var(--shadow-color);
+    margin-bottom: 2rem;
 }
 
 /* Styling for the address input field */
+#addressFieldContainer {
+    position: relative;
+    width: 100%;
+}
+
 #addressField {
     width: 100%;
     padding: 10px;
-    padding-right: 50px; /* Extra space for the button */
+    padding-right: 50px;
     box-sizing: border-box;
-    border: 1px solid var(--border-color); /* Using variable for border color */
+    border: 1px solid #fff;  /* White border */
     border-radius: 4px;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
 }
 
 /* Styling for the search button */
@@ -20,8 +36,8 @@
     top: 0;
     bottom: 0;
     padding: 10px 15px;
-    background-color: var(--primary-color); /* Pink background using variable */
-    color: var(--background-color); /* White text */
+    background-color: var(--primary-color);
+    color: var(--background-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -30,60 +46,104 @@
 
 /* Button hover effect */
 #searchInternet:hover {
-    background-color: var(--primary-color-light); /* Lighter pink on hover using variable */
+    background-color: var(--primary-color-light);
 }
 
+/* General container for the subscription card */
 .broadbandCards {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 10px;
-
+    padding: 1.25rem;
+    border: 1px solid var(--card-border-color);
+    border-radius: 0.5rem;
+    background-color: var(--card-bg-color);
+    margin-bottom: 1.25rem;
+    box-shadow: 0 0.125rem 0.25rem var(--shadow-color);
+    width: 80%;
+    max-width: 50rem;
+    margin: 1.25rem auto;
 }
 
+/* Style for each section */
+.section1,
+.section2,
+.section3,
+.section4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Section 1: Logo - Align left, takes up 20% */
 .section1 {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 0 0 20%;  /* Takes up 20% of the space */
+    align-items: flex-start;
 }
 
-.section1 img {
-    width: 100px;
-}
-
+/* Section 2: Subscription info - Align left, takes up 30% */
 .section2 {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex: 0 0 30%;  /* Takes up 30% of the space */
+    align-items: flex-start;  /* Align content to the left */
 }
 
-.section2 li {
-    margin-bottom: 10px;
-}
-
+/* Section 3: Speed Info - Align right, takes up 30% */
 .section3 {
-    flex: 1;
+    flex: 0 0 30%;  /* Takes up 30% of the space */
+    align-items: flex-start;  /* Align content to the left */
+}
+
+/* Section 4: Order button and Least Price - Align right, takes up 20% */
+.section4 {
+    flex: 0 0 20%;  /* Takes up 20% of the space */
+    align-items: flex-end;  /* Align content to the right */
+}
+
+/* List items (li) styling */
+.section1 li,
+.section2 li,
+.section3 li,
+.section4 li {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+    color: var(--text-color);
+    list-style: none;
+}
+
+/* Style for the Order button */
+.section4 button {
+    padding: 0.625rem 1.25rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.section4 button:hover {
+    background-color: var(--primary-color-light);
+}
+
+/* Style for images in Section 3 */
+.section3 img {
+    width: 3.75rem;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+/* Styling for the section items */
+.broadbandCards li {
+    list-style: none;
+}
+
+/* Styling for the output contents section */
+.outputContents {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.section3 button {
-    background-color: #00d1b2;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.section3 img {
-    width: 50px;
-    margin-top: 10px;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    width: 100%;
 }
