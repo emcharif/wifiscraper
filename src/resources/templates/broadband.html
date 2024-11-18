@@ -15,13 +15,15 @@
     <div id="mainContainer">
         <div id="navbar"></div>
         <div id="contents">
-            <form id="addressForm">
-                <label for="address">Adresse:</label>
-                <div id="addressFieldContainer">
-                    <input type="text" name="address" id="addressField" placeholder="Skriv din adresse her" required>
-                    <button type="submit" id="searchInternet">&#x1F50D;</button>
-                </div>
-            </form>
+            <div id="addressFormContainer">
+                <form id="addressForm">
+                    <label for="address" id="addressFieldLabel">Adresse:</label>
+                    <div id="addressFieldContainer">
+                        <input type="text" name="address" id="addressField" placeholder="Skriv din adresse her" required>
+                        <button type="submit" id="searchInternet">&#x1F50D;</button>
+                    </div>
+                </form>
+            </div>
             <div class="outputContents" id="outputContents">
                 <div class="broadbandCards">
                     <!-- Section 1: Logo -->

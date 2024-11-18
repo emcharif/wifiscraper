@@ -7,7 +7,8 @@ export async function generateSubscriptionCard(subscription) {
     const section1 = document.createElement('div');
     section1.classList.add('section1');
     const img = document.createElement('img');
-    img.setAttribute('src', `./img/${subscription.company}Logo.png` || '');  // Add logo URL dynamically
+    console.log(subscription.company);
+    img.setAttribute('src', `../img/${subscription.company}Logo.png`);  // Add logo URL dynamically
     img.setAttribute('alt', `${subscription.company} logo`);
     section1.appendChild(img);
     cardContainer.appendChild(section1);
